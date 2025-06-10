@@ -2,14 +2,10 @@
 #SingleInstance Force
 #Warn
 
-boolToStr := (trueFalse := False) => trueFalse ? 'True' : 'False'
-
 RegKey := "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthA2dp\Parameters"
 RegValue := "BluetoothAacEnable"
 
 xValue := 1
-
-; Check if the value exists ; 
 
 try
 {
@@ -18,8 +14,7 @@ try
 catch
 {
 	RegWrite(1, "REG_DWORD", RegKey, RegValue)
-	MsgBox "Creado registro: HKLM\SYSTEM\CurrentControlSet\Services\BthA2dp\Parameters -> BluetoothAacEnable"
-    ; ExitApp 1
+	MsgBox " HKLM\SYSTEM\CurrentControlSet\Services\BthA2dp\Parameters -> BluetoothAacEnable"
 }
 
 enabledAPTX := false
@@ -27,8 +22,6 @@ enabledAPTX := false
 if (xValue = 0) {
     enabledAPTX := true
 }
-
-; MsgBox "enabledAPTX " boolToStr(enabledAPTX)
 
 make_gui()
 make_gui() {
@@ -64,12 +57,10 @@ on_checkbox_click(control, *) {
     if control.Value
     {
 		RegWrite(0, "REG_DWORD", RegKey, RegValue)
-		; MsgBox "btnexit enabled"
 	}
     else
 	{
 		RegWrite(1, "REG_DWORD", RegKey, RegValue)
-		; MsgBox "btnexit disabled"
 	}
 }
 
