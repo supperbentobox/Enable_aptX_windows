@@ -1,4 +1,5 @@
-# Enable_aptX_windows
+# Enable aptX on Windows
+
 autohotkey script ahk v2 to Enable and Disable (there's a reason why) bluetooth audio codec aptX on Windows 11 with a checkbox program to enable or disable it.
 
 The default codec for bluetooth audio in Windows 11 is AAC so far (june 2025) but it can be switched from AAC to aptX.
