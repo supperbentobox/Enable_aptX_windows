@@ -8,4 +8,5 @@ When you enable aptX you leave no place for another bluetooth audio codec, so if
 In short, the AHK script just switch the registry REG_DWORD from 1 (AAC) to 0 (aptX)
 
 Registry route =    HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthA2dp\Parameters
+
 REG_DWORD      =    BluetoothAacEnable
